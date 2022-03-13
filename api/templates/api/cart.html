@@ -1,0 +1,112 @@
+{% extends 'users/base.html' %}
+{% load static %}
+
+{% block extend_head %}
+
+
+
+{% endblock %}
+
+
+{% block extend_nav %}
+
+<ul class="sidenav">
+  <li><a href="{% url 'users:account' %}">User Account</a></li>
+  <li><a class="active"  href="{% url 'api:cart' %}">Cart</a></li>
+  <li><a href="{% url 'users:sign-out' %}">Sign out</a></li>
+</ul>
+
+{% endblock %}
+
+
+{% block content %}
+
+<h3>Hedera Hashgraph - Cart</h3>
+
+<div class="container">
+
+  <h3>This is the balance of your Hedera Hashgraph wallet</h3>
+  <table id="saved-cards">
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Balance</td>
+        <td>{{balance}}</td>      
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <h3>Official HBAR cryptocurrency denominations</h3>
+  <table id="saved-cards">
+    <thead>
+      <tr>
+        <th>Denomination</th>
+        <th>Hbars</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>gigabar 1 Gℏ</td>
+        <td>1,000,000,000 ℏ</td>      
+      </tr>
+       <tr>
+        <td>megabar 1 Mℏ</td>
+        <td>1,000,000 ℏ</td>      
+      </tr>
+       <tr>
+        <td>kilobar 1 kℏ</td>
+        <td>1,000 ℏ</td>      
+      </tr>
+       <tr>
+        <td>hbar 1 ℏ</td>
+        <td>1 ℏ</td>      
+      </tr>
+       <tr>
+        <td>millibar 1,000 mℏ</td>
+        <td>1 ℏ</td>      
+      </tr>
+       <tr>
+        <td>microbar 1,000,000 μℏ</td>
+        <td>1 ℏ</td>      
+      </tr>
+       <tr>
+        <td>tinybar 100,000,000 tℏ</td>
+        <td>1 ℏ</td>      
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div>
+  <br>
+  <button type="submit" class="use-hbar" onclick="payWithHbar('T-Shirt', '6000')">Pay 6000 millibar for a T-Shirt</button>
+</div>
+<div>
+   <br>
+  <button type="submit" class="use-hbar" onclick="payWithHbar('Jeans', '4500')">Pay 4500 millibar for Jeans</button>
+</div>
+<div>
+    <br>
+  <button type="submit" class="use-hbar" onclick="payWithHbar('Moper', '8700')">Pay 8700 millibar for Moper</button>
+</div>
+
+
+
+
+
+  
+</div>
+
+
+{% endblock %}
+
+{% block extend_footer %}
+
+{% endblock extend_footer %}
